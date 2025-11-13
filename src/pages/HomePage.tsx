@@ -23,13 +23,13 @@ const HomePage: React.FC = () => {
       <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <div className="rounded-2xl bg-ink-800/60 ring-1 ring-white/20 p-6">
-            <div className="text-2xl text-paper-50 mb-4">Line Chart</div>
+            <div className="text-2xl text-paper-50 mb-4 font-sans">Line Chart</div>
             <ChartPlaceholder />
           </div>
         </div>
         <div className="lg:col-span-1">
           <div className="rounded-2xl bg-paper-50/10 backdrop-blur-[2px] ring-1 ring-white/20 p-6 h-full">
-            <div className="text-lg text-paper-50 mb-3">Alpha</div>
+            <div className="text-lg text-paper-50 mb-3 font-heading">Alpha</div>
             <div className="text-paper-50/70">
               Add auxiliary indicators, notes, or filters here.
             </div>
