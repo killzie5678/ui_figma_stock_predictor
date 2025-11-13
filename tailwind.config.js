@@ -35,6 +35,7 @@ export default {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
         heading: ['Mukta', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         condensed: ['Khand', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        icon: ['Jua', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

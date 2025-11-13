@@ -8,7 +8,7 @@ const HomePage: React.FC = () => {
       {/* Top section: Title + Sidebar stats */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-4">
         <div className="lg:col-span-2">
-          <h1 className="font-display text-[64px] leading-tight text-paper-50">
+          <h1 className="font-display text-[56px] md:text-[80px] leading-tight text-paper-50">
             Stock Name
           </h1>
         </div>
@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
       <div className="mt-8 lg:mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
         <div className="lg:col-span-2">
           <div className="rounded-2xl bg-ink-800/60 ring-1 ring-white/20 p-6">
-            <div className="text-2xl text-paper-50 mb-4 font-sans">Line Chart</div>
+            <div className="text-[32px] md:text-[48px] text-paper-50 mb-4 font-sans">Line Chart</div>
             <ChartPlaceholder />
           </div>
         </div>

@@ -21,7 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               placeholder="Feature search"
               className="w-full rounded-xl bg-[#8C8AFD] placeholder-black/80 text-black px-4 py-3 pr-10 outline-none ring-1 ring-black/10 focus:ring-2 focus:ring-black/20 font-condensed"
             />
-            <span className="absolute inset-y-0 right-3 flex items-center text-paper-50/80">
+            <span className="absolute inset-y-0 right-3 flex items-center text-black/80 font-icon">
               🔎
             </span>
           </div>
