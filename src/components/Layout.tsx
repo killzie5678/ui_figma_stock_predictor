@@ -1,10 +1,27 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 interface LayoutProps {
   children: React.ReactNode
+  onSearch?: (ticker: string) => void  // Callback function when user searches
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, onSearch }) => {
+  // State to track the search input value
+  const [searchValue, setSearchValue] = useState('')
+
+  /**
+   * Handle search form submission
+   * Prevents page reload and calls the onSearch callback with the ticker
+   */
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault()  // Prevent default form submission behavior
+
+    if (searchValue.trim() && onSearch) {
+      // Call the parent component's search handler with the uppercase ticker
+      onSearch(searchValue.trim().toUpperCase())
+    }
+  }
+
   return (
     <div className="min-h-screen w-full relative bg-gradient-to-b from-[#3C24B3] to-[#502D69] text-paper-50">
       {/* Decorative ellipses based on Figma */}
@@ -15,16 +32,22 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       </div>
       <header className="w-full">
         <div className="mx-auto max-w-7xl px-4 py-6 flex items-center justify-end">
-          <div className="relative w-full max-w-md">
+          {/* Search form - allows user to enter stock ticker */}
+          <form onSubmit={handleSearch} className="relative w-full max-w-md">
             <input
               type="text"
-              placeholder="Feature search"
+              placeholder="Search stock ticker (e.g., AAPL, MSFT)"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
               className="w-full rounded-xl bg-[#8C8AFD] placeholder-black/80 text-black px-4 py-3 pr-10 outline-none ring-1 ring-black/10 focus:ring-2 focus:ring-black/20 font-condensed"
             />
-            <span className="absolute inset-y-0 right-3 flex items-center text-black/80 font-icon">
+            <button
+              type="submit"
+              className="absolute inset-y-0 right-3 flex items-center text-black/80 font-icon hover:text-black cursor-pointer"
+            >
               🔎
-            </span>
-          </div>
+            </button>
+          </form>
         </div>
       </header>
       <main className="w-full">
